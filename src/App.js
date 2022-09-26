@@ -1,16 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
-import HomePage from "./components/HomePage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Rapidapi from "./components/rapidt/Rapidapi";
 import LoginPage from "./components/LoginPage";
-import AppRoute from "./components/Routers.js";
-import { useState } from "react";
-
+import HomePage from "./components/HomePage";
 function App() {
-  const [isUserAuthenticated, setUserAuthenticated] = useState(false);
   return (
-    <div className="App">
-      {isUserAuthenticated ? <HomePage /> : <LoginPage />}
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/translaor" element={<Rapidapi />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
