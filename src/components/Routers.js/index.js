@@ -1,18 +1,19 @@
 import React from "react";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "../HomePage";
 import LoginPage from "../LoginPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Rapidapi from "../rapidt/Rapidapi";
 
 const AppRoute = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" component={<HomePage />} />
-          <Route path="/login" component={<LoginPage />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+<Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/translaor" element={<Rapidapi />} />
+      </Routes>      
+    </Router>
   );
 };
 
